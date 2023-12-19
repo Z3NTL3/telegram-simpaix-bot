@@ -41,13 +41,13 @@ func NewClient(token string, timeout time.Duration) *Client {
 }
 
 func Transform[T any](model interface{}) (*T, error) {
-	m, ok := model.(*T)
+	m, ok := model.(T)
 
 	if !ok {
 		return nil, errors.New("err")
 	}
 
-	return m, nil
+	return &m, nil
 }
 
 // Only HTTP/HTTPS proxies are supported
@@ -126,7 +126,7 @@ func (c *Client) Authorize() (interface{}, error) {
 		return nil, err
 	}
 
-	return &model, nil
+	return model, nil
 }
 
 func (c *Client) GetUpdates(opts payloads.MUpdate) (interface{}, error) {
@@ -155,5 +155,5 @@ func (c *Client) GetUpdates(opts payloads.MUpdate) (interface{}, error) {
 		return nil, err
 	}
 
-	return &m, nil
+	return m, nil
 }

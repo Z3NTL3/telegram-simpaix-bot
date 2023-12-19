@@ -30,5 +30,7 @@ func main() {
 		log.Fatal(err)
 	}
 
+	bot_ = nil // garbage collector handles and deletes out of stack
+
 	fmt.Println(bot)
 }
