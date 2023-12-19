@@ -25,7 +25,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	bot, err := api.Transform[*models.API_Resp[models.User]](&models.API_Resp[models.User]{}, bot_)
+	bot, err := (api.Transform[models.API_Resp[models.User]](bot_))
 	if err != nil {
 		log.Fatal(err)
 	}

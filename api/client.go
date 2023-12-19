@@ -40,11 +40,13 @@ func NewClient(token string, timeout time.Duration) *Client {
 	}
 }
 
-func Transform[T any](dummy T, model interface{}) (T, error) {
-	m, ok := model.(T)
+func Transform[T any](model interface{}) (*T, error) {
+	m, ok := model.(*T)
+
 	if !ok {
-		return dummy, errors.New("err")
+		return nil, errors.New("err")
 	}
+
 	return m, nil
 }
 
@@ -119,6 +121,7 @@ func (c *Client) Authorize() (interface{}, error) {
 	}
 
 	model := models.API_Resp[models.User]{}
+
 	if err := json.Unmarshal(b, &model); err != nil {
 		return nil, err
 	}
