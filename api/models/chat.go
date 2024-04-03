@@ -16,3 +16,5 @@ type Chat struct {
 	IsForum bool     `json:"is_forum"`
 	Link    string   `json:"invite_link"`
 }
+
+
