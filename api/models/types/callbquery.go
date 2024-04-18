@@ -1,4 +1,4 @@
-package models
+package types
 
 type CallbackQuery struct {
 	ID      int      `json:"id"`

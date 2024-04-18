@@ -5,6 +5,8 @@ License: GNU
 */
 package models
 
+import "z3ntl3/telegram-simpaix-bot/api/models/types"
+
 type BaseResp struct {
 	Success     bool   `json:"ok"`                    // always present
 	Description string `json:"description,omitempty"` // optional
@@ -20,7 +22,7 @@ type API_Resp[R ResultContext] struct {
 }
 
 type ResultContext interface {
-	~*CallbackQuery | ~*Chat | ~*Message | ~*Update | ~*User
+	~*types.CallbackQuery | ~*types.Chat | ~*types.Message | ~*types.Update | ~*types.User
 	// todo: more
 	// IsEmpy(min int) bool -> if n fields are empty retuns true, otherwise false
 }

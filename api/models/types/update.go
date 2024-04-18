@@ -1,4 +1,4 @@
-package models
+package types
 
 type Update struct {
 	ID         int            `json:"update_id"`

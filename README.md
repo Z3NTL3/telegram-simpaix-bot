@@ -1,10 +1,8 @@
-# Telegram - SimpaixBot
+# Telesimp
 
-Source of the Simpaix telegram bot.
+Minimalistic Telegram API client with a modular architecture. Telesimp is event-driven and easy to adapt. Decreasing overhead and minimizing time spent on development while conveying swiftness and robustness.
 
-### Reminder
+### #### Notes
 
-This project is unfinished.
-
-- Building custom Telegram API client wrapper for Go
-- Building custom BOT
+- This project is unfinished. Please do note this client is getting written specifically for the Telegram support bot of the upcoming SimpaiX company.
+- Models/architecture and this README is not final.
